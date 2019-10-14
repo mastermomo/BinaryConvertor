@@ -8,6 +8,17 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * @author Mohammad Khan
+ * @version 1.0
+ *
+ * This class represents the activity screen where the user
+ * inputs two decimal value and taps the "ADD" button in order
+ * receive a binary value. When the user taps "ADD" the intent
+ * is to have the two decimal values first summed, converted to
+ * binary, and then provided to the user.
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -33,23 +44,13 @@ public class MainActivity extends AppCompatActivity {
                 int decimal1 = Integer.parseInt(firstDecimalEditText.getText().toString());
                 int decimal2 = Integer.parseInt(secondDecimalEditText.getText().toString());
 
+                // Adds the two decimal values and then converts their sum
+                // into a it's binary string. The string is then parsed
+                // as an integer.
                 int decimalSum = decimal1 + decimal2;
                 int binarySum = Integer.parseInt(Integer.toBinaryString(decimalSum));
-//                int remainderDecimal1 = 0;
-//                for(int i = 0; decimal1 > 0; i++) {
-//                    remainderDecimal1 = decimal1 % 2;
-//                    decimal1 /= 2;
-//                }
-//
-//                int remainderDecimal2 = 0;
-//                for(int i = 0; decimal2 > 0; i++) {
-//                    remainderDecimal2 = decimal2 % 2;
-//                    decimal2 /= 2;
-//                }
-//                // Adds the two binary values and
-//                // displays the their sum to the user.
-//                int binarySum = remainderDecimal1 + remainderDecimal2;
-                binarySumTextView.setText(binarySum + "");
+
+                binarySumTextView.setText(binarySum + ""); // Outputs the binary sum to the user as a string.
             }
         });
     }
