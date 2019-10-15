@@ -1,10 +1,10 @@
 package com.mohammadkhan.binaryconverter;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,11 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
  * @version 1.0
  *
  * This class represents the activity screen where the user
- * inputs two decimal value and taps the "ADD" button in order
- * receive a binary value. When the user taps "ADD" the intent
- * is to have the two decimal values first summed, converted to
- * binary, and then provided to the user.
- *
+ * can navigate to other activity screen used with the intent of solving
+ * different problems involving decimals and binary numbers.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -26,31 +23,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button addDecimalButton = (Button) findViewById(R.id.addDecimalButton); // Creates an object that stores the "Add" button.
+        Button sumTwoBinaryToBinaryButton = (Button) findViewById(R.id.sumTwoBinaryToBinaryButton); // Creates an object that stores the "Sum of Two Decimal Numbers to Binary" button.
 
-        // Creates a click event when the user taps the "Add" button.
-        addDecimalButton.setOnClickListener(new View.OnClickListener() {
+        // Creates a click event when the user taps the "Sum of Two Decimal Numbers to Binary" button.
+        sumTwoBinaryToBinaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Creates two objects that store the first and second decimal input
-                // boxes respectively.
-                EditText firstDecimalEditText = (EditText) findViewById(R.id.firstDecimalEditText);
-                EditText secondDecimalEditText = (EditText) findViewById(R.id.secondDecimalEditText);
+                // Creates an Intent object that is then used to
+                // navigate to the TwoDecSumToBinaryActivity class
+                // when the user taps on the button.
+                Intent startIntent = new Intent(getApplicationContext(), TwoDecSumToBinaryActivity.class);
+                startActivity(startIntent);
+            }
+        });
 
-                TextView binarySumTextView = (TextView) findViewById(R.id.binarySumTextView); // Creates an object that stores the result text box.
+        Button googleSearchBinaryButton = (Button) findViewById(R.id.googleSearchBinaryButton); // Creates an object that stores the "Tap Me To Learn More About Binary Numbers!" button.
 
-                // Converts the string values given by the users in the first
-                // and second input boxes to integers.
-                int decimal1 = Integer.parseInt(firstDecimalEditText.getText().toString());
-                int decimal2 = Integer.parseInt(secondDecimalEditText.getText().toString());
+        // Creates a click event when the user taps the "Tap Me To Learn More About Binary Numbers!" button.
+        googleSearchBinaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link = "https://www.mathsisfun.com/binary-number-system.html"; // Intializes a string with a web link.
+                Uri webaddress = Uri.parse(link); // Parses the web link in order to go to in another application (browser).
 
-                // Adds the two decimal values and then converts their sum
-                // into a it's binary string. The string is then parsed
-                // as an integer.
-                int decimalSum = decimal1 + decimal2;
-                int binarySum = Integer.parseInt(Integer.toBinaryString(decimalSum));
-
-                binarySumTextView.setText(binarySum + ""); // Outputs the binary sum to the user as a string.
+                // Creates an Intent object that is then used to
+                // navigate to the web link in question
+                // when the user taps on the button.
+                Intent learnBinaryPage = new Intent(Intent.ACTION_VIEW, webaddress);
+                startActivity(learnBinaryPage);
             }
         });
     }
