@@ -10,12 +10,10 @@
         android:id="@+id/sumTwoBinaryToBinaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="392dp"
         android:text="Sum of Two Decimal Numbers to Binary"
-        app:layout_constraintBottom_toTopOf="@+id/googleSearchBinaryButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="431dp" />
 
     <Button
         android:id="@+id/googleSearchBinaryButton"
@@ -32,10 +30,58 @@
         android:id="@+id/TitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Binary Convertor"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/sumTwoBinaryToBinaryButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/decimalToBinaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a decimal number to binary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <Button
+        android:id="@+id/binaryToDecimalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a binary number to decimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <Button
+        android:id="@+id/differenceTwoDecimalToBinaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diffrence of Two Decimal Numbers to binary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <Button
+        android:id="@+id/divideTwoBinaryToBinaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="division of two decimal numbers to binary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="500dp" />
+
+    <Button
+        android:id="@+id/multiplyTwoBinaryToBinaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Multiplication of two decimal numbers to binary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="572dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
