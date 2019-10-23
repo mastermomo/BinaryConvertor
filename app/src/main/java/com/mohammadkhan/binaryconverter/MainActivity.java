@@ -23,6 +23,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button decimalToBinaryButton = (Button) findViewById(R.id.decimalToBinaryButton); // Creates an object that stores the "A Decimal Number To Binary" button.
+
+        // Creates a click event when the user taps the "A Decimal Number To Binary" button.
+        decimalToBinaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Creates an Intent object that is then used to
+                // navigate to the DecimalToBinaryActivity class
+                // when the user taps on the button.
+                Intent decimalToBinaryIntent = new Intent(getApplicationContext(), DecimalToBinaryActivity.class);
+                startActivity(decimalToBinaryIntent);
+            }
+        });
+
         Button sumTwoDecimalToBinaryButton = (Button) findViewById(R.id.differenceTwoDecimalToBinaryButton); // Creates an object that stores the "Sum of Two Decimal Numbers to Binary" button.
 
         // Creates a click event when the user taps the "Sum of Two Decimal Numbers to Binary" button.
@@ -32,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 // Creates an Intent object that is then used to
                 // navigate to the TwoDecSumToBinaryActivity class
                 // when the user taps on the button.
-                Intent startIntent = new Intent(getApplicationContext(), TwoDecSumToBinaryActivity.class);
-                startActivity(startIntent);
+                Intent sumTwoDecimalToBinaryIntent = new Intent(getApplicationContext(), TwoDecSumToBinaryActivity.class);
+                startActivity(sumTwoDecimalToBinaryIntent);
             }
         });
 
